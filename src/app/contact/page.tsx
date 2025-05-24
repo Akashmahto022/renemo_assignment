@@ -2,9 +2,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div>
-            event details page
-        </div>
+        <div>contact page</div>
     )
 }
 
