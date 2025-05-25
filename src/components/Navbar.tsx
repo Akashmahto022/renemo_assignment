@@ -40,8 +40,8 @@ const Navbar = () => {
                         <Link href={"/events"}>
                             <li className="hover:text-blue-600 transition-colors">Events</li>
                         </Link>
-                        <Link href={"/about"}>
-                            <li className="hover:text-blue-600 transition-colors">About</li>
+                        <Link href={"/admin"}>
+                            <li className="hover:text-blue-600 transition-colors">Admin</li>
                         </Link>
                         <Link href={"/contact"}>
                             <li className="hover:text-blue-600 transition-colors">Contact</li>
@@ -81,8 +81,8 @@ const Navbar = () => {
                     <Link href={"/events"} onClick={() => setMenuOpen(false)}>
                         <li className="hover:text-blue-600 transition-colors">Events</li>
                     </Link>
-                    <Link href={"/about"} onClick={() => setMenuOpen(false)}>
-                        <li className="hover:text-blue-600 transition-colors">About</li>
+                    <Link href={"/admin"} onClick={() => setMenuOpen(false)}>
+                        <li className="hover:text-blue-600 transition-colors">Admin</li>
                     </Link>
                     <Link href={"/contact"} onClick={() => setMenuOpen(false)}>
                         <li className="hover:text-blue-600 transition-colors">Contact</li>

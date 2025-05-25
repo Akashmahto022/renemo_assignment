@@ -73,13 +73,14 @@ const page = ({ params }: { params: Promise<{ eventId: String }> }) => {
                                         className="object-cover w-full h-full"
                                     />
                                 </div>
-                                <div className='md:hidden md:w-1/3 max-w-xl max-h-[420px] p-4 mb-4 border-[1px] border-gray-300 rounded-2xl'>
+                                <div className=' md:hidden md:w-1/3 max-w-xl max-h-[420px] p-4 border-[1px] border-gray-300 rounded-2xl'>
                                     <h1 className="text-3xl font-bold mb-2">{currentEventDetails.title}</h1>
                                     <p className="text-gray-600 mb-4">{readableDate} | <span className="font-semibold">{currentEventDetails.location}</span></p>
-                                    <p className="text-lg text-gray-800 mb-6">{currentEventDetails.description}</p>
-                                    <div>
-                                        button
+                                    <p className="text-lg text-gray-800 mb-6 h-60">{currentEventDetails.description}</p>
+                                    <div className='flex justify-end items-end'>
+                                        <Button text='Register' onClick={() => setIsRegistrationModelOpen(true)} />
                                     </div>
+                                    <RegistrationModel eventId={currentEventDetails.id} isOpen={isRegistrationModelOpen} onClose={() => setIsRegistrationModelOpen(false)} />
                                 </div>
                                 <h1 className="text-3xl font-bold mb-2 underline">About The Event</h1>
                                 <p className="text-gray-600 mb-4">{readableDate} | <span className="font-semibold">{currentEventDetails.location}</span></p>
@@ -90,9 +91,9 @@ const page = ({ params }: { params: Promise<{ eventId: String }> }) => {
                                 <p className="text-gray-600 mb-4">{readableDate} | <span className="font-semibold">{currentEventDetails.location}</span></p>
                                 <p className="text-lg text-gray-800 mb-6 h-60">{currentEventDetails.description}</p>
                                 <div className='flex justify-end items-end'>
-                                    <Button text='Register' onClick={()=>setIsRegistrationModelOpen(true)} />
+                                    <Button text='Register' onClick={() => setIsRegistrationModelOpen(true)} />
                                 </div>
-                                <RegistrationModel eventId={currentEventDetails.id}  isOpen={isRegistrationModelOpen} onClose={()=>setIsRegistrationModelOpen(false)} />
+                                <RegistrationModel eventId={currentEventDetails.id} isOpen={isRegistrationModelOpen} onClose={() => setIsRegistrationModelOpen(false)} />
                             </div>
                         </div>
                     </div>
