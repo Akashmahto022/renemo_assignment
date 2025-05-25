@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '@/components/Button'
+import RegistrationModel from '@/components/RegistrationModel'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
@@ -10,6 +11,7 @@ const page = ({ params }: { params: Promise<{ eventId: String }> }) => {
     const [loading, setLoading] = useState(Boolean)
     const [error, setError] = useState(Boolean)
     const [errorMessage, setErrorMessage] = useState(String)
+    const [isRegistrationModelOpen, setIsRegistrationModelOpen] = useState(false);
 
     useEffect(() => {
         const fetchEventDetails = async () => {
@@ -88,8 +90,9 @@ const page = ({ params }: { params: Promise<{ eventId: String }> }) => {
                                 <p className="text-gray-600 mb-4">{readableDate} | <span className="font-semibold">{currentEventDetails.location}</span></p>
                                 <p className="text-lg text-gray-800 mb-6 h-60">{currentEventDetails.description}</p>
                                 <div className='flex justify-end items-end'>
-                                    <Button text='Register' />
+                                    <Button text='Register' onClick={()=>setIsRegistrationModelOpen(true)} />
                                 </div>
+                                <RegistrationModel eventId={currentEventDetails.id}  isOpen={isRegistrationModelOpen} onClose={()=>setIsRegistrationModelOpen(false)} />
                             </div>
                         </div>
                     </div>

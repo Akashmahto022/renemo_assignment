@@ -11,7 +11,9 @@ const Navbar = () => {
         <nav className="bg-white shadow">
             <div className="flex justify-between items-center mx-4 md:mx-10 py-2">
                 <div>
-                    <Image src={"/images/logo.jpg"} alt='logo' width={140} height={20} />
+                    <Link href={"/"}>
+                    <Image src={"/images/logo.jpg"} alt='logo' width={140} height={20} className='cursor-pointer'/>
+                    </Link>
                 </div>
                 {/* Hamburger menu for mobile */}
                 <div className="md:hidden">
