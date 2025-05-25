@@ -14,18 +14,26 @@ type Event = {
 
 const GetEvents = () => {
     const [events, setEvents] = useState<Event[]>([])
+    const [loading, setLoading] = useState(Boolean)
+    const [error, setError] = useState(String)
 
     useEffect(() => {
         const fecthEvents = async () => {
-            const response = await axios.get('/api/events/get-events')
-            if (response) {
-                setEvents(response?.data?.events)
+            try {
+                setLoading(true)
+                const response = await axios.get('/api/events/get-events')
+                if (response) {
+                    setEvents(response?.data?.events)
+                    setLoading(false)
+                }
+            } catch (error) {
+                setError("Not Able To Get Events")
+                setLoading(false)
             }
         }
         fecthEvents()
     }, [])
 
-    // console.log(events)
 
     return (
         <div>
